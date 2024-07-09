@@ -6,7 +6,7 @@ def create_project():
     project_name = input("Enter the project name: ")
     script_dir = os.path.dirname(os.path.abspath(__file__))
     base_path = os.path.dirname(script_dir)
-    new_project_path = os.path.join(base_path, project_name)
+    new_project_path = os.path.join(os.path.dirname(base_path), project_name)
     os.makedirs(new_project_path, exist_ok=True)
 
     # Directories including nested structures
@@ -15,7 +15,7 @@ def create_project():
         "src/models",
         "src/services",
         "tests",
-        "docs",
+        "docs/references",
         "data",
         "scripts",
         "notebooks",
@@ -33,6 +33,7 @@ def create_project():
         "src/models/user.py": "# User model",
         "src/services/database.py": "# Database services",
         "src/services/authentication.py": "# Authentication services",
+        "config/.env": "# Environment variables",
     }
 
     # Create directories
