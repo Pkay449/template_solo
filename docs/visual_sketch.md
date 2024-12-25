@@ -18,7 +18,7 @@ new_project/   (name as entered by the user when prompted by the script)
 └── tests/
 ```
 
-### Description:
+### Description
 
 - **Root Level**: The root of each project contains configuration files like `LICENSE`, `README.md`, and `requirements.txt`, along with the `setup.py` file.
 - **Directories**: Both projects have similar directory structures, including `src`, `tests`, `docs`, `data`, `scripts`, `notebooks`, `config`, and `examples`. These directories are created empty except for the `docs` folder.
@@ -36,6 +36,7 @@ The organization of a Python project, including the placement of `main.py` and i
 **Purpose**: The `main.py` file typically serves as the entry point of a Python application. It is where the execution of the program begins, and it should be accessible and easy to find.
 
 **Common Location**:
+
 - **`src/` Directory**: For projects that include a source directory (`src/`), `main.py` is often placed directly inside this directory. This placement keeps the entry point at the top level of your source code, making it straightforward for other developers to locate and execute.
 
 ### Supporting Files (Modules and Packages)
@@ -43,6 +44,7 @@ The organization of a Python project, including the placement of `main.py` and i
 **Purpose**: Supporting files contain the actual implementation of the functionality your application relies on. These could be classes, functions, constants, and other resources that `main.py` utilizes to perform its tasks.
 
 **Organization**:
+
 - **Subdirectories within `src/`**: It is common to organize supporting files into subdirectories within the `src/` directory. These subdirectories can be organized by functionality, feature, or any logical grouping that makes sense for your project. For instance:
   - **`src/utils/`**: For utility functions and classes.
   - **`src/models/`**: For data models or business logic.
@@ -173,25 +175,31 @@ This structure is ideal for projects where different scripts perform distinct ta
 Yes, exactly! The code in the `utils`, `models`, and `services` directories is intended to be reusable and shared across different parts of your project. By organizing common functionality into these directories, you enable each part of your application to leverage shared resources, maintaining consistency and avoiding redundancy. Here's a breakdown of how each of these directories typically contributes to a project and how they might be used in the entry files:
 
 ### 1. Utils (`utils/`)
+
 The `utils` directory typically contains helper functions, utilities, and common tools that can be used throughout the application. This might include functions for logging setup, data formatting, validation routines, and more. These utilities help keep your code DRY (Don't Repeat Yourself) by centralizing common functionality.
 
 **Example Use:**
+
 ```python
 from utils.helper import configure_logging, format_date
 ```
 
 ### 2. Models (`models/`)
+
 The `models` directory holds definitions for data structures or business logic models that represent entities in your application. This could be user profiles, products, transactions, etc. These models ensure that data structure and related operations are encapsulated and can be easily managed or modified.
 
 **Example Use:**
+
 ```python
 from models.user import User
 ```
 
 ### 3. Services (`services/`)
+
 The `services` directory is used for code that interacts with databases, external services, or performs complex business logic. It typically contains classes or functions that handle communication with databases, API calls, or significant business rules.
 
 **Example Use:**
+
 ```python
 from services.database import DatabaseService
 from services.authentication import AuthenticationService
